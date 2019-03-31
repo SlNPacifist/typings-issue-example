@@ -1,0 +1,21 @@
+{
+  "name": "typings-issue-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build-with-type-roots": "npm run clean && tsc",
+    "build-with-symlinked-typings": "npm run clean && npm run link-typings && tsc",
+    "build-with-paths": "npm run clean && tsc -p ./tsconfig-paths.json",
+    "link-typings": "mkdir -p ./node_modules/@types && ln -s ../../external-typings/asker ./node_modules/@types/asker",
+    "clean": "rm -f ./src/*.js && rm -f ./node_modules/@types/asker"
+  },
+  "author": "slnpacifist@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "3.4.1"
+  },
+  "dependencies": {
+    "asker": "2.0.0"
+  }
+}
